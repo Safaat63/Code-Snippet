@@ -10,7 +10,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
       data: { code },
     });
     return NextResponse.json(updatedSnippet);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to update snippet' }, { status: 500 });
   }
 }

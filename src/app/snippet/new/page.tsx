@@ -1,9 +1,9 @@
 'use client'
-import { Textarea } from '@/src/components/ui/textarea';
-import { Button } from '@/src/components/ui/button';
-import { Label } from '@/src/components/ui/label';
-import { Input } from '@/src/components/ui/input';
-import * as actions from '@/src/actions/index'
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import * as actions from '@/actions/index'
 import React, { useActionState } from 'react';
 import Link from 'next/link';
 

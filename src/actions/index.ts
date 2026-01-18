@@ -1,5 +1,5 @@
 'use server'
-import {prisma} from '@/src/lib/prisma'
+import {prisma} from '@/lib/prisma'
 import { redirect } from 'next/navigation'
 export const saveSnippet = async (id:number, code:string)=>{
     await prisma.snippet.update({
@@ -28,7 +28,7 @@ export async function createSnippet(prevState:{message: string}, formData: FormD
             return {message:"Title is Required and must be longer."}
         }
 
-        if (typeof code !== "string" || codelength < 8 ) {
+        if (typeof code !== "string" || code.length < 8 ) {
             return {message:"Code is Required and must be longer."}
         }
 

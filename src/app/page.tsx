@@ -1,8 +1,7 @@
 import Link from "next/dist/client/link";
 import { prisma } from "../lib/prisma";
 import { Button } from "../components/ui/button";
-import type { Snippet } from '@prisma/client';
-
+import { Snippet } from "@prisma/client";
 export default async function Home() {
   const snippets = await prisma.snippet.findMany({});
 

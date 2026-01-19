@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import { Editor } from '@monaco-editor/react'
-import type { Snippet } from '@prisma/client'
 import { Button } from './ui/button'
 import { saveSnippet } from "@/actions"
+import { Snippet } from '@/generated/prisma/client'
 
 const EditSnippetForm = ({ snippet }: { snippet: Snippet }) => {
   const [code, setCode] = useState(snippet.code)

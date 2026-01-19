@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import * as actions from '@/actions/index'
-import React, { useActionState } from 'react';
+import { useActionState } from 'react';
 import Link from 'next/link';
 
 

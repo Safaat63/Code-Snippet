@@ -21,7 +21,8 @@ export const deleteSnippet = async (id:number) =>{
 export async function createSnippet(prevState:{message: string}, formData: FormData) {
         "use server";
 
-        const title = formData.get("title"); //deleted as string,cz it migh be an empty file
+        try {
+            const title = formData.get("title"); //deleted as string,cz it migh be an empty file
         const code = formData.get("code");
 
         if (typeof title !== "string" || title.length < 4) {
@@ -37,6 +38,13 @@ export async function createSnippet(prevState:{message: string}, formData: FormD
         });
 
         console.log("Snippet created:", snippet);
+
+        throw new Error("Oops, something went wrong!");
+            
+        } catch (error:any) {
+            return {message: error.message}
+        }
+
 
         redirect("/"); // works on server
     }

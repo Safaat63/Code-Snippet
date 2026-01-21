@@ -1,13 +1,13 @@
 'use client'
-import Error from 'next/error'
 
-// type ErrorPageProps = {
-//     error: Error
-// }
-//or const ErrorPage: React.FC<errorPageProps> =({error})=>{}
-const ErrorPage = () => {
+type ErrorPageProps = {
+    error: Error
+}
+ const ErrorPage: React.FC<ErrorPageProps> =({error})=>{
+
+//const ErrorPage = ({error}: ErrorPageProps) => {
   return (
-    <div>Error Page</div>
+    <div>{error.message}</div>
   )
 }
 

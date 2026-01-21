@@ -20,6 +20,7 @@ export default async function SnippetDetailpage({
 
 
   })
+
   if (!snippet) return <h1>Snippet Not Found</h1>
 
   const deleteSnippetAction = actions.deleteSnippet.bind(null, snippet.id)
@@ -55,3 +56,12 @@ export default async function SnippetDetailpage({
 
   )
 }
+//this whole thing will change the dynamic page into static so that page reloads fast.
+
+export const generateStaticParams = async () =>{
+  const snippets = await prisma.snippet.findMany();
+  return snippets.map((snippet)=>{ 
+    return {id: snippet.id.toString() }
+  })
+}
+
